@@ -14,12 +14,5 @@ body{
     padding: 20px;
     border: 1px solid black;}
 
-.text{
-	width: 150px;
-	margin: 20px;
-    padding: 20px;
-	border: 1px solid black;
-}
-
 #button_on:hover{cursor: pointer; background-color: turquoise;}
 #button_off:hover{cursor: pointer; background-color: yellow;}
