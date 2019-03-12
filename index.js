@@ -8,6 +8,8 @@ function init(){
     
     var BUTTON_ON = _('button_on');
     var BUTTON_OFF = _('button_off');
+	var INPUT_FIELD = _('input');
+	var BUTTON_SEND = _('button_send');
     
 /*############################################################################################################################*/
     
@@ -17,8 +19,11 @@ function init(){
           
           BUTTON_ON.addEventListener('click', function(){Pd.start();}, false);
           BUTTON_OFF.addEventListener('click', function(){Pd.stop();}, false);
+		  BUTTON_SEND.addEventListener('click', function(){Pd.send('frequency', [Number(INPUT_FIELD.value)])}, false);
           
+		
     })
+	
     
 /*############################################################################################################################*/
 
