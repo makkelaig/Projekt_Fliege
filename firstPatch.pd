@@ -1,0 +1,18 @@
+#N canvas 333 162 450 300 10;
+#X obj 103 70 osc~ 440;
+#X obj 103 129 dac~;
+#X text 182 72 <-- 440 Hz. sine wave at full blast;
+#X obj 103 99 *~ 0.05;
+#X text 27 156 Audio computation can be turned on and off by sending
+messages to the global "pd" object as follows:;
+#X msg 93 200 \; pd dsp 1;
+#X msg 197 200 \; pd dsp 0;
+#X text 108 237 ON;
+#X text 217 237 OFF;
+#X text 291 208 <-- click these;
+#X text 182 100 <-- reduce amplitude to 0.05;
+#X text 155 129 <----- send to the audio output device;
+#X floatatom 35 35 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;
+#X connect 12 0 0 0;
