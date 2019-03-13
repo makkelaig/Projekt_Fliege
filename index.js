@@ -14,16 +14,9 @@ function init(){
     var patch
         $.get('patches/firstPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)
-          Pd.start();
-            
-            /*
-          BUTTON_ON.addEventListener('click', function(){Pd.start();}, false);
-          BUTTON_OFF.addEventListener('click', function(){Pd.stop();}, false);
-          BUTTON_SEND.addEventListener('click', function(){Pd.send('frequency', [Number(INPUT_FIELD.value)])}, false);
-          */
-          
     })
         
+	Pd.start();
 /*############################################################################################################################*/
     
 //TOGGLE FULLSCREEN
@@ -125,7 +118,8 @@ function init(){
         
     //GET SOUND VALUES (Proportional zur X-Achse)
         this.setSoundValues = function(){
-            FREQUENCY_VALUE = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 400, 700);}
+            FREQUENCY_VALUE = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 400, 700);
+			Pd.send('frequency', [FREQUENCY_VALUE]);}
         
     /*####################################################################*/
         
