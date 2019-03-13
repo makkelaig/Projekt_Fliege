@@ -8,15 +8,20 @@ function init(){
     
     var CONTAINER = _('fullscreen_background_image');
     var FREQUENCY_VALUE;
+    var WING_FREQUENCY;
+    var RESONANCE;
+    var VOLUME;
     
 /*############################################################################################################################*/
     
     var patch
+        //$.get('patches/fliege_web.pd', function(patchStr) {
         $.get('patches/firstPatch.pd', function(patchStr) {
-          patch = Pd.loadPatch(patchStr)
+          patch = Pd.loadPatch(patchStr)  
     })
         
-	Pd.start();
+    Pd.start();
+        
 /*############################################################################################################################*/
     
 //TOGGLE FULLSCREEN
@@ -118,8 +123,11 @@ function init(){
         
     //GET SOUND VALUES (Proportional zur X-Achse)
         this.setSoundValues = function(){
-            FREQUENCY_VALUE = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 400, 700);
-			Pd.send('frequency', [FREQUENCY_VALUE]);}
+            FREQUENCY_VALUE = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 100, 1000);
+            Pd.send('frequency', [FREQUENCY_VALUE]);
+            //WING_FREQUENCY = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 10, 150);
+            //Pd.send('wing-frequency', [WING_FREQUENCY]);
+        }
         
     /*####################################################################*/
         
@@ -209,5 +217,26 @@ function init(){
 }
 
 /*############################################################################################################################*/
+
+/*
+
+    Fliege muss ab und zu anhalten
+    -> break funktion
+    
+    was passiert, wenn eine Fliege auf eine andere trifft?
+    
+    weitere Bilder ausprobieren
+    Fliege könnte scheißen, wenn sie anhält
+    
+    Videospiele für Katzen
+    https://www.youtube.com/watch?v=KF90Q7rTwcc
+    
+    Fliege auf dem Bildschirm
+    https://www.youtube.com/watch?v=_oUcTZqQZJo
+    
+    Arkuskosinus
+    https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/acos
+
+*/
 
 /*############################################################################################################################*/
