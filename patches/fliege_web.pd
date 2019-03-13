@@ -134,7 +134,7 @@
 #X obj 524 338 osc~ \$1;
 #X msg 544 237 16.18;
 #X msg 444 181 0;
-#X text 439 130 Tonerhöhung;
+#X text 439 130 TonerhÃ¶hung;
 #X obj 758 96 delay \$1;
 #X floatatom 830 52 5 0 0 0 - - -;
 #X obj 830 117 / 1.0618;

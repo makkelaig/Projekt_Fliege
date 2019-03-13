@@ -131,7 +131,7 @@
 #X obj 476 350 osc~ \$1;
 #X msg 496 249 16.18;
 #X msg 396 193 0;
-#X text 391 142 Tonerhöhung;
+#X text 391 142 TonerhÃ¶hung;
 #X obj 131 529 *~;
 #X obj -24 730 delay 20000;
 #X obj 710 108 delay \$1;
