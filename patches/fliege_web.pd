@@ -1,4 +1,4 @@
-#N canvas 155 100 1163 619 10;
+#N canvas 90 94 1163 619 10;
 #X obj 129 597 dac~;
 #X obj 170 175 -~ 0.5;
 #X obj 170 195 *~ 2;
@@ -14,7 +14,7 @@
 #X obj 96 304 *~;
 #X obj 96 391 *~ 0.5;
 #X obj 24 243 nbx 10 20 -1e+37 1e+37 0 0 empty empty wing-resonance
-0 -12 1 10 -204786 -4160 -4160 181.942 256;
+0 -12 1 10 -204786 -4160 -4160 153.956 256;
 #X obj 19 268 / 100;
 #X obj 129 495 hip~ 700;
 #X obj 167 7 phasor~;
@@ -26,7 +26,7 @@
 #X obj 145 70 *~ 0.2;
 #X obj 170 155 *~ 6;
 #X obj 166 -20 nbx 10 20 -1e+37 1e+37 0 0 empty empty wing-frequency
-0 -12 1 10 -204786 -4160 -4160 50 256;
+0 -12 1 10 -204786 -4160 -4160 0 256;
 #N canvas 0 22 450 300 grapha 0;
 #X obj 100 100 cnv 15 100 100 empty empty empty 20 12 0 14 -262144
 -66577 0;
@@ -47,7 +47,7 @@
 #X connect 7 0 2 0;
 #X connect 7 0 6 0;
 #X coords 0 -1 1 1 100 100 1 100 100;
-#X restore 19 -4 pd grapha;
+#X restore 30 -24 pd grapha;
 #N canvas 0 22 450 300 grapha 0;
 #X obj 100 100 cnv 15 100 100 empty empty empty 20 12 0 14 -262144
 -66577 0;
@@ -61,7 +61,7 @@
 #X connect 2 0 3 0;
 #X connect 4 0 3 0;
 #X coords 0 -1 1 1 100 100 1 100 100;
-#X restore 22 122 pd grapha;
+#X restore 33 102 pd grapha;
 #N canvas 0 22 450 300 grapha 0;
 #X obj 100 100 cnv 15 100 100 empty empty empty 20 12 0 14 -262144
 -66577 0;
@@ -108,7 +108,7 @@
 #X text 10 314 downstroke;
 #X text 11 360 overshoot;
 #X obj -23 238 vsl 15 138 70 283 0 0 empty empty empty 0 -9 0 10 -204786
--4160 -4160 7200 1;
+-4160 -4160 5400 1;
 #X obj 191 523 *~;
 #X obj 252 564 line~;
 #X msg 251 526 0 100;
@@ -123,11 +123,11 @@
 #X obj 465 330 s \$1;
 #X floatatom 547 259 5 0 0 0 - - -;
 #X obj 473 248 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 458.88 256;
+-262144 -1 -1 -2178.46 256;
 #X obj 467 307 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 458.88 256;
+-262144 -1 -1 -2178.46 256;
 #X obj 533 310 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 458.88 256;
+-262144 -1 -1 -2178.46 256;
 #X obj 444 155 loadbang;
 #X obj 527 281 + \$1;
 #X msg 474 205 200;
@@ -194,7 +194,12 @@
 #X text 506 130 /Erniedrigung;
 #X obj 423 361 *~ 0.5;
 #X obj 351 523 tgl 50 0 empty empty ON_/_OFF 0 15 0 10 -258113 -4032
--4032 0 1;
+-4032 1 1;
+#X obj -22 206 r resonance;
+#X obj 277 -36 r wing_frequency;
+#X obj 360 467 hsl 128 15 0.1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6600 1;
+#X obj 365 436 r volume;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 0 4 0;
@@ -312,3 +317,7 @@
 #X connect 98 0 97 0;
 #X connect 100 0 35 1;
 #X connect 101 0 36 0;
+#X connect 102 0 14 0;
+#X connect 103 0 25 0;
+#X connect 104 0 36 0;
+#X connect 105 0 104 0;
