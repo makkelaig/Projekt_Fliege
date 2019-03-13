@@ -8,10 +8,14 @@ function init(){
     
     var CONTAINER = _('fullscreen_background_image');
     var FREQUENCY_VALUE;
-    var WING_FREQUENCY;
+	var START_SOUND = _('start_sound');
+    /*
+	var WING_FREQUENCY;
     var RESONANCE;
     var VOLUME;
-    
+	*/
+
+
 /*############################################################################################################################*/
     
     var patch
@@ -20,8 +24,9 @@ function init(){
           patch = Pd.loadPatch(patchStr)  
     })
         
-    Pd.start();
-        
+/* start sound */
+START_SOUND.addEventListener('click', function(){Pd.start();});
+	
 /*############################################################################################################################*/
     
 //TOGGLE FULLSCREEN
@@ -125,6 +130,7 @@ function init(){
         this.setSoundValues = function(){
             FREQUENCY_VALUE = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 100, 1000);
             Pd.send('frequency', [FREQUENCY_VALUE]);
+			
             //WING_FREQUENCY = getProportionalValue(this.position.x, 0, WINDOW_INNERWIDTH, 10, 150);
             //Pd.send('wing-frequency', [WING_FREQUENCY]);
         }
